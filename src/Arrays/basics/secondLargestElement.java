@@ -1,5 +1,8 @@
+package Arrays.basics;
+
 import java.util.Scanner;
-public class firstOccurrenceCount {
+public class secondLargestElement {
+
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -8,14 +11,15 @@ public class firstOccurrenceCount {
             arr[i] = sc.nextInt();
         }
 
-        Scanner sc1 = new Scanner(System.in);
-        int target = sc1.nextInt();
-
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
         for(int i=0; i<arr.length; i++){
-            if(arr[i]==target){
-                System.out.println(i);
-                break;
+            if(arr[i]>firstMax){
+                secondMax = firstMax;
+                firstMax = arr[i];
             }
         }
+        System.out.println(firstMax);
+        System.out.println(secondMax);
     }
 }

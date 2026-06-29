@@ -1,3 +1,5 @@
+package Arrays.basics;
+
 import java.util.Scanner;
 
 public class secondSmallestElement {
