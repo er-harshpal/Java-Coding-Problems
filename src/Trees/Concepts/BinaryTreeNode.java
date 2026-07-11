@@ -29,9 +29,9 @@ public class BinaryTreeNode {
     }
 
     public static void main(String[] args){
-        BinaryTreeNode root = new BinaryTreeNode(30);
-        root.left = new BinaryTreeNode(15);
-        root.right = new BinaryTreeNode(35);
+        BinaryTreeNode root = new BinaryTreeNode(10);
+        root.left = new BinaryTreeNode(11);
+        root.right = new BinaryTreeNode(12);
         System.out.println(root.data);
     }
 }

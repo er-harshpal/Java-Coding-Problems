@@ -1,5 +1,6 @@
-Binary Tree
+Binary Tree Concepts
 Inorder Travesal in Binary Tree
 Preorder Travesal in Binary Tree
 Postorder Travesal in Binary Tree
 Levelorder Travesal in Binary Tree
+Generic Tree
