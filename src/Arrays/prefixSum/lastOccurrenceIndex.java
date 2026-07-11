@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.prefixSum;
 
 import java.util.Scanner;
 public class lastOccurrenceIndex {
