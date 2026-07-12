@@ -2,7 +2,7 @@
 <project version="4">
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="basics" options="--add-modules jdk.jcmd --add-exports jdk.jcmd/sun.tools.jstat=ALL-UNNAMED" />
+      <module name="basics" options="--add-modules jdk.jcmd --add-exports jdk.jcmd/sun.tools.jstat=ALL-UNNAMED --add-exports java.net.http/jdk.internal.net.http.common=ALL-UNNAMED" />
     </option>
   </component>
 </project>
