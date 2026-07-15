@@ -1,7 +1,7 @@
 package Trees.Concepts;
 
 public class InorderTraversal {
-    public void InOrder(BinaryTreeNode root){
+    public void InOrder(PostorderTraversal.BinaryTreeNode root){
         if(root!=null){
             System.out.println(root.data);
             InOrder(root.left);

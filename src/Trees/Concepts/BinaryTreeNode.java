@@ -1,74 +1,39 @@
-//package Trees.Concepts;
-////// First Practice
-//public class BinaryTreeNode {
-//    public int data;
-//    public BinaryTreeNode left, right;
-//    public BinaryTreeNode(int data){
-//        this.data = data;
-//        left = null;
-//        right = null;
-//    }
-//
-//    public int getData(){
-//        return data;
-//    }
-//    public void setData(int data){
-//        this.data = data;
-//    }
-//    public BinaryTreeNode getLeft(){
-//        return left;
-//    }
-//    public void setLeft(BinaryTreeNode left){
-//        this.left = left;
-//    }
-//    public BinaryTreeNode getRight(){
-//        return right;
-//    }
-//    public void setRight(BinaryTreeNode right){
-//        this.right = right;
-//    }
-//
-//    public static void main(String[] args){
-//        BinaryTreeNode root = new BinaryTreeNode(10);
-//        root.left = new BinaryTreeNode(11);
-//        root.right = new BinaryTreeNode(12);
-//        System.out.println(root.data);
-//    }
-//}
-
-
-////Second Time
-package Trees.Concepts;
+import java.util.*;
 public class BinaryTreeNode {
-    public int data;
-    public BinaryTreeNode left;
-    public BinaryTreeNode right;
-    public BinaryTreeNode(int data){
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
 
-    public int getData(){
-        return data;
-    }
+	int data;
+	BinaryTreeNode left;
+	BinaryTreeNode right;
 
+	BinaryTreeNode(int data) {
+		this.data = data;
+	}
 
-    public void setData(int data){
-        this.data = data;
-    }
+	public static BinaryTreeNode insertLevelOrder(BinaryTreeNode root, int data) {
 
-    public BinaryTreeNode getLeft(){
-        return left;
-    }
-    public void setData(BinaryTreeNode left){
-        this.left = left;
-    }
+		if (root == null)
+			return new BinaryTreeNode(data);
 
-    public BinaryTreeNode getRight(){
-        return right;
-    }
-    public void setRight(BinaryTreeNode right){
-        this.right = right;
-    }
+		Queue<BinaryTreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+
+		while (!queue.isEmpty()) {
+
+			BinaryTreeNode current = queue.poll();
+
+			if (current.left == null) {
+				current.left = new BinaryTreeNode(data);
+				return root;
+			}
+			queue.offer(current.left);
+
+			if (current.right == null) {
+				current.right = new BinaryTreeNode(data);
+				return root;
+			}
+			queue.offer(current.right);
+		}
+
+		return root;
+	}
 }

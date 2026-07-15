@@ -1,10 +1,10 @@
 package Trees.Problems;
-import java.util.*;
-import Trees.Concepts.BinaryTreeNode;
+
+import Trees.Concepts.PostorderTraversal;
 
 public class searchingInTree {
 
-    public static boolean searchElementInBinaryTree(BinaryTreeNode root, int data){
+    public static boolean searchElementInBinaryTree(PostorderTraversal.BinaryTreeNode root, int data){
         if(root == null){
             return false;
         }
@@ -16,13 +16,13 @@ public class searchingInTree {
     }
 
     public static void main(String[] args){
-        BinaryTreeNode root = new BinaryTreeNode(30);
-        root.left = new BinaryTreeNode(20);
-        root.right = new BinaryTreeNode(35);
-        root.left.left = new BinaryTreeNode(27);
-        root.left.right = new BinaryTreeNode(22);
-        root.right.left = new BinaryTreeNode(47);
-        root.right.right = new BinaryTreeNode(40);
+        PostorderTraversal.BinaryTreeNode root = new PostorderTraversal.BinaryTreeNode(30);
+        root.left = new PostorderTraversal.BinaryTreeNode(20);
+        root.right = new PostorderTraversal.BinaryTreeNode(35);
+        root.left.left = new PostorderTraversal.BinaryTreeNode(27);
+        root.left.right = new PostorderTraversal.BinaryTreeNode(22);
+        root.right.left = new PostorderTraversal.BinaryTreeNode(47);
+        root.right.right = new PostorderTraversal.BinaryTreeNode(40);
 
         int data = 47;
 

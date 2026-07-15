@@ -1,9 +1,8 @@
 package Trees.Problems;
-import Trees.Concepts.BinaryTreeNode;
-import java.util.*;
+import Trees.Concepts.PostorderTraversal;
 
 public class maxElement {
-    public int maxInBinaryTree(BinaryTreeNode root) {
+    public int maxInBinaryTree(PostorderTraversal.BinaryTreeNode root) {
         int maxValue = Integer.MIN_VALUE;
         if (root != null) {
             int leftMax = maxInBinaryTree(root.left);
@@ -19,13 +18,13 @@ public class maxElement {
         }return maxValue;
     }
     public static void main(String[] args){
-        BinaryTreeNode root = new BinaryTreeNode(10);
-        root.left = new BinaryTreeNode(12);
-        root.right = new BinaryTreeNode(14);
-        root.right.right = new BinaryTreeNode(11);
-        root.right.left = new BinaryTreeNode(13);
-        root.left.right = new BinaryTreeNode(15);
-        root.left.left = new BinaryTreeNode(18);
+        PostorderTraversal.BinaryTreeNode root = new PostorderTraversal.BinaryTreeNode(10);
+        root.left = new PostorderTraversal.BinaryTreeNode(12);
+        root.right = new PostorderTraversal.BinaryTreeNode(14);
+        root.right.right = new PostorderTraversal.BinaryTreeNode(11);
+        root.right.left = new PostorderTraversal.BinaryTreeNode(13);
+        root.left.right = new PostorderTraversal.BinaryTreeNode(15);
+        root.left.left = new PostorderTraversal.BinaryTreeNode(18);
 
         maxElement obj = new maxElement();
         int value = obj.maxInBinaryTree(root);

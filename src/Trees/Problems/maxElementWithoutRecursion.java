@@ -1,17 +1,18 @@
 package Trees.Problems;
-import Trees.Concepts.BinaryTreeNode;
+import Trees.Concepts.PostorderTraversal;
+
 import java.util.*;
 
 public class maxElementWithoutRecursion {
-    public int maxInBinaryTreeLevelOrder(BinaryTreeNode root){
+    public int maxInBinaryTreeLevelOrder(PostorderTraversal.BinaryTreeNode root){
         if(root == null){
             return Integer.MIN_VALUE;
         }
         int max = Integer.MIN_VALUE;
-        Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+        Queue<PostorderTraversal.BinaryTreeNode> q = new LinkedList<PostorderTraversal.BinaryTreeNode>();
         q.offer(root);
         while (!q.isEmpty()) {
-            BinaryTreeNode tmp = q.poll();
+            PostorderTraversal.BinaryTreeNode tmp = q.poll();
 
             max = Math.max(max, tmp.getData());
 
@@ -25,13 +26,13 @@ public class maxElementWithoutRecursion {
     }
 
     public static void main(String[] args){
-        BinaryTreeNode root = new BinaryTreeNode(30);
-        root.left = new BinaryTreeNode(20);
-        root.right = new BinaryTreeNode(35);
-        root.right.right = new BinaryTreeNode(40);
-        root.right.left = new BinaryTreeNode(47);
-        root.left.right = new BinaryTreeNode(22);
-        root.left.left = new BinaryTreeNode(27);
+        PostorderTraversal.BinaryTreeNode root = new PostorderTraversal.BinaryTreeNode(30);
+        root.left = new PostorderTraversal.BinaryTreeNode(20);
+        root.right = new PostorderTraversal.BinaryTreeNode(35);
+        root.right.right = new PostorderTraversal.BinaryTreeNode(40);
+        root.right.left = new PostorderTraversal.BinaryTreeNode(47);
+        root.left.right = new PostorderTraversal.BinaryTreeNode(22);
+        root.left.left = new PostorderTraversal.BinaryTreeNode(27);
 
 
         maxElementWithoutRecursion obj = new maxElementWithoutRecursion();

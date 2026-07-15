@@ -4,7 +4,7 @@ import java.util.*;
 
 public class LevelorderTraversal {
 
-    public ArrayList<ArrayList<Integer>> levelOrder(BinaryTreeNode root) {
+    public ArrayList<ArrayList<Integer>> levelOrder(PostorderTraversal.BinaryTreeNode root) {
 
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
 
@@ -13,7 +13,7 @@ public class LevelorderTraversal {
         }
 
         // Initialization
-        Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+        Queue<PostorderTraversal.BinaryTreeNode> q = new LinkedList<PostorderTraversal.BinaryTreeNode>();
 
         q.offer(root);
         q.offer(null);
@@ -22,7 +22,7 @@ public class LevelorderTraversal {
 
         while(!q.isEmpty()){
 
-            BinaryTreeNode tmp = q.poll();
+            PostorderTraversal.BinaryTreeNode tmp = q.poll();
 
             // poll is used to remove
             // offer is used to insert
@@ -68,11 +68,11 @@ public class LevelorderTraversal {
     return res;
     }
 
-    public BinaryTreeNode insert(BinaryTreeNode root, int data){
+    public PostorderTraversal.BinaryTreeNode insert(PostorderTraversal.BinaryTreeNode root, int data){
 
         // Tree is empty
         if(root == null){
-            return new BinaryTreeNode(data);
+            return new PostorderTraversal.BinaryTreeNode(data);
         }
 
         if(data < root.data){
@@ -86,7 +86,7 @@ public class LevelorderTraversal {
         return root;
     }
 
-    public void printTree(BinaryTreeNode root, int level){
+    public void printTree(PostorderTraversal.BinaryTreeNode root, int level){
 
         if(root == null){
             return;
@@ -110,7 +110,9 @@ public class LevelorderTraversal {
 
         LevelorderTraversal tree = new LevelorderTraversal();
 
-        BinaryTreeNode root = new BinaryTreeNode(10);
+        PostorderTraversal.BinaryTreeNode root = new PostorderTraversal.BinaryTreeNode(10);
+
+
 
         root = tree.insert(root, 1);
         root = tree.insert(root, 3);
@@ -125,6 +127,6 @@ public class LevelorderTraversal {
 
         System.out.println(tree.levelOrder(root));
         ArrayList<ArrayList<Integer>> res = tree.levelOrder(root);
-        System.out.println("The total levels in the tree are " + res.size());
+        System.out.println("The height of the tree is " + res.size());
     }
 }
