@@ -1,4 +1,4 @@
-package Arrays.basics;
+package Arrays.Concepts.basics;
 
 import java.util.Scanner;
 public class secondLargestElement {

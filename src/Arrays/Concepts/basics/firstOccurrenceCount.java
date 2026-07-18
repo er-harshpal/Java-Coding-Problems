@@ -1,7 +1,7 @@
-package Arrays.basics;
+package Arrays.Concepts.basics;
 
 import java.util.Scanner;
-public class countOccurrences {
+public class firstOccurrenceCount {
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -10,14 +10,14 @@ public class countOccurrences {
             arr[i] = sc.nextInt();
         }
 
-        Scanner sc2 = new Scanner(System.in);
-        int target = sc2.nextInt();
-        int count = 0;
+        Scanner sc1 = new Scanner(System.in);
+        int target = sc1.nextInt();
+
         for(int i=0; i<arr.length; i++){
             if(arr[i]==target){
-                count = count +1;
+                System.out.println(i);
+                break;
             }
         }
-        System.out.println(count);
     }
 }

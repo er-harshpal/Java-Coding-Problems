@@ -1,4 +1,4 @@
-package Arrays.prefixSum;
+package Arrays.Concepts.prefixSum;
 
 public class rangeSum {
 

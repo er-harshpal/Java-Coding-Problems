@@ -1,4 +1,4 @@
-package Arrays.prefixSum;
+package Arrays.Concepts.prefixSum;
 
 public class twoSum {
     public class Solution {

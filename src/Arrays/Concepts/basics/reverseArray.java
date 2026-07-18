@@ -1,4 +1,4 @@
-package Arrays.basics;
+package Arrays.Concepts.basics;
 
 public class reverseArray {
     public static class Main {

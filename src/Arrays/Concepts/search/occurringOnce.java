@@ -1,4 +1,4 @@
-package Arrays.search;
+package Arrays.Concepts.search;
 
 import java.util.HashMap;
 

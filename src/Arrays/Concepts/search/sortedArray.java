@@ -1,4 +1,4 @@
-package Arrays.search;
+package Arrays.Concepts.search;
 import java.util.Scanner;
 public class sortedArray {
     public static void main(String[] args){

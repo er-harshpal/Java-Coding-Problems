@@ -1,20 +1,13 @@
-//public class Preordertest {
-//	public int preOrderTraversal(Node node, root){
-//		if(root!=null){
-//			preOrderTraversal(root.data);
-//			preOrderTraversal(root.left);
-//			preOrderTraversal(root.right);
-//		}
-//		return -1;
-//	}
-//	class Node{
-//
-//	}
-//	insert(){
-//
-//	}
-//
-//	printValue(){
-//
-//	}
-//}
+import java.util.Arrays;
+
+public class Preordertest {
+	public static void main(String[] args) {
+		int num[] = {5, 8, 9, 3, 7, 6, 1, 3};
+
+		// Seřazení (nic nevrací)
+		Arrays.sort(num);
+
+		// Vytisknutí seřazeného pole
+		System.out.println(Arrays.toString(num));
+	}
+}
