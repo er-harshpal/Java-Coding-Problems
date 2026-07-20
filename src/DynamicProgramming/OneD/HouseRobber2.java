@@ -2,7 +2,7 @@
 class HouseRobber2{
 	public int rob(int[] nums){
 		int n = nums.length;
-		if(n == 1) return nums[0];
+		 if(n == 1) return nums[0];
 		// Max of: excluding last house excluding first hosue
 		return Math.max(robLinear(nums, 0 , n-2), robLinear(nums, 1, n-1));
 	}
