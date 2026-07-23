@@ -1,4 +1,4 @@
-package Trees.Problems;
+package Trees.Concepts.Concepts;
 
 import java.util.LinkedList;
 import java.util.Queue;

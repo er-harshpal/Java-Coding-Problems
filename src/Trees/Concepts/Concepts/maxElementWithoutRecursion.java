@@ -1,4 +1,4 @@
-package Trees.Problems;
+package Trees.Concepts.Concepts;
 import Trees.Concepts.PostorderTraversal;
 
 import java.util.*;
