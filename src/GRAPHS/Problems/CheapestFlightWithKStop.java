@@ -3,7 +3,7 @@ package GRAPHS.Problems;
 // Priority Queue
 import java.util.*;
 
-class Solution {
+class CheapestFlightWithKStop {
 
 	public int findCheapestPrice(int n,
 	                             int[][] flights,
@@ -78,10 +78,22 @@ class Solution {
 
 
 
-// BFS
-import java.util.*;
 
-class Solution {
+
+
+
+
+
+
+
+
+
+
+
+
+// BFS
+
+class CheapestFlightWithKStop{
 
 	public int findCheapestPrice(int n,
 	                             int[][] flights,

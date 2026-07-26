@@ -1,9 +1,11 @@
 package GRAPHS.Problems;
 
 // DFS + HashMap
+
+
 import java.util.*;
 
-class Solution {
+class CloneGrpah {
 
 	Map<Node, Node> map = new HashMap<>();
 
@@ -33,10 +35,20 @@ class Solution {
 
 
 
-// BFS
-import java.util.*;
 
-class Solution {
+
+
+
+
+
+
+
+
+
+
+// BFS
+
+class CloneGraph {
 
 	public Node cloneGraph(Node node) {
 

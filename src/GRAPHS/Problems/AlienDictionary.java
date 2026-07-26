@@ -2,7 +2,7 @@ package GRAPHS.Problems;
 
 import java.util.*;
 
-class Solution {
+class AlienDictionary {
 
 	public String alienOrder(String[] words) {
 

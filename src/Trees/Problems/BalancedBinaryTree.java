@@ -1,7 +1,13 @@
 package Trees.Problems;
+import java.util.*;
 
-// Brute FOrce
-class Solution {
+class TreeNode{
+	TreeNode root;
+	TreeNode left = root.left;
+	TreeNode right = root.right;
+}
+// Brute Force
+ public class BalancedBinaryTree {
 
 	public boolean isBalanced(TreeNode root) {
 
@@ -25,6 +31,9 @@ class Solution {
 
 		return 1 + Math.max(height(root.left), height(root.right));
 	}
+	public static void main(String[] args){
+
+	}
 }
 
 
@@ -33,7 +42,7 @@ class Solution {
 
 
 // Optimal
-class Solution {
+public class BalancedBinaryTree {
 
 	public boolean isBalanced(TreeNode root) {
 
@@ -59,5 +68,10 @@ class Solution {
 			return -1;
 
 		return 1 + Math.max(left, right);
+	}
+
+
+	public static void main(String[] args){
+
 	}
 }

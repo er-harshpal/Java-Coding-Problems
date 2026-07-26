@@ -2,7 +2,7 @@ package GRAPHS.Problems;
 // Optimal BFS
 import java.util.*;
 
-class Solution {
+class WordLadder {
 
 	public int ladderLength(String beginWord,
 	                        String endWord,
