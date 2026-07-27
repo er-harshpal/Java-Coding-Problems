@@ -1,6 +1,6 @@
-package Trees.Concepts;
+package Trees.Problems;
 
-public class PostorderTraversal {
+public class BinaryTree {
 
 	// =========================================================
 	// 1. Binary Tree Node
@@ -45,28 +45,7 @@ public class PostorderTraversal {
 
 
 	// =========================================================
-	// 3. Postorder Traversal
-	// Left -> Right -> Root
-	// =========================================================
-	public void postOrder(BinaryTreeNode root) {
-
-		if (root == null) {
-			return;
-		}
-
-		// Visit left subtree
-		postOrder(root.left);
-
-		// Visit right subtree
-		postOrder(root.right);
-
-		// Visit current node
-		System.out.print(root.data + " ");
-	}
-
-
-	// =========================================================
-	// 4. Print Tree Sideways
+	// 3. Print Tree Sideways
 	// =========================================================
 	public void printTree(BinaryTreeNode root, int level) {
 
@@ -91,15 +70,14 @@ public class PostorderTraversal {
 
 
 	// =========================================================
-	// 5. Main Method
+	// 4. Main Method
 	// =========================================================
 	public static void main(String[] args) {
 
-		PostorderTraversal tree = new PostorderTraversal();
+		BinaryTree tree = new BinaryTree();
 
 		BinaryTreeNode root = null;
 
-		// Construct BST
 		root = tree.insert(root, 10);
 		root = tree.insert(root, 5);
 		root = tree.insert(root, 15);
@@ -108,14 +86,7 @@ public class PostorderTraversal {
 		root = tree.insert(root, 12);
 		root = tree.insert(root, 18);
 
-
-		// Print Tree
 		System.out.println("Binary Tree:");
 		tree.printTree(root, 0);
-
-
-		// Postorder Traversal
-		System.out.println("\nPostorder Traversal:");
-		tree.postOrder(root);
 	}
 }

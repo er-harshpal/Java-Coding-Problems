@@ -1,132 +1,172 @@
 package Trees.Concepts;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class LevelorderTraversal {
 
-    public ArrayList<ArrayList<Integer>> levelOrder(PostorderTraversal.BinaryTreeNode root) {
+	// =========================================================
+	// 1. Binary Tree Node
+	// =========================================================
+	static class BinaryTreeNode {
 
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+		int data;
+		BinaryTreeNode left;
+		BinaryTreeNode right;
 
-        if(root == null){
-            return res;
-        }
+		BinaryTreeNode(int data) {
+			this.data = data;
+			this.left = null;
+			this.right = null;
+		}
+	}
 
-        // Initialization
-        Queue<PostorderTraversal.BinaryTreeNode> q = new LinkedList<PostorderTraversal.BinaryTreeNode>();
 
-        q.offer(root);
-        q.offer(null);
+	// =========================================================
+	// 2. Insert Node into BST
+	// =========================================================
+	public BinaryTreeNode insert(BinaryTreeNode root, int data) {
 
-        ArrayList<Integer> curr = new ArrayList<>();
+		// Base case: empty position found
+		if (root == null) {
+			return new BinaryTreeNode(data);
+		}
 
-        while(!q.isEmpty()){
+		// Insert into left subtree
+		if (data < root.data) {
+			root.left = insert(root.left, data);
+		}
 
-            PostorderTraversal.BinaryTreeNode tmp = q.poll();
+		// Insert into right subtree
+		else if (data > root.data) {
+			root.right = insert(root.right, data);
+		}
 
-            // poll is used to remove
-            // offer is used to insert
-            // peek is used to view the front
-            // isEmpty checks whether the queue has any element
-            // size returns the number of elements
-            // clear removes all the elements
-            // contains checks if an element exists and returns boolean
-            // remove removes the first element
-            // difference of poll from remove is remove gives exception when queue is empty while poll returns null
-            // element returns the first element without removing it
-            // difference from peek is when we write peek on an empty queue we get null and we get exception in element
+		// Duplicate values are ignored
+		return root;
+	}
 
-            if(tmp != null){
 
-                curr.add(tmp.data);
+	// =========================================================
+	// 3. Level Order Traversal
+	// =========================================================
+	public ArrayList<ArrayList<Integer>> levelOrder(BinaryTreeNode root) {
 
-                if(tmp.left != null){
-                    q.offer(tmp.left);
-                }
+		ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 
-                if(tmp.right != null){
-                    q.offer(tmp.right);
-                }
+		// Empty tree
+		if (root == null) {
+			return result;
+		}
 
-            }
-            else{
+		Queue<BinaryTreeNode> queue = new LinkedList<>();
 
-                ArrayList<Integer> c_curr = new ArrayList<>(curr);
+		queue.offer(root);
+		queue.offer(null);  // Marks the end of a level
 
-                res.add(c_curr);
+		ArrayList<Integer> currentLevel = new ArrayList<>();
 
-                curr.clear(); // Java will clear the ref, so have to make a new ArrayList.
+		while (!queue.isEmpty()) {
 
-                // Completion of a level
-                if(!q.isEmpty()){
-                    q.offer(null);
-                }
+			BinaryTreeNode current = queue.poll();
 
-            }
+			// If current is an actual node
+			if (current != null) {
 
-        }
-    return res;
-    }
+				currentLevel.add(current.data);
 
-    public PostorderTraversal.BinaryTreeNode insert(PostorderTraversal.BinaryTreeNode root, int data){
+				// Add left child
+				if (current.left != null) {
+					queue.offer(current.left);
+				}
 
-        // Tree is empty
-        if(root == null){
-            return new PostorderTraversal.BinaryTreeNode(data);
-        }
+				// Add right child
+				if (current.right != null) {
+					queue.offer(current.right);
+				}
+			}
 
-        if(data < root.data){
-            root.left = insert(root.left, data);
-        }
+			// null means current level has ended
+			else {
 
-        else if(data > root.data){
-            root.right = insert(root.right, data);
-        }
+				result.add(new ArrayList<>(currentLevel));
 
-        return root;
-    }
+				currentLevel.clear();
 
-    public void printTree(PostorderTraversal.BinaryTreeNode root, int level){
+				// If more nodes remain, mark the end
+				// of the next level
+				if (!queue.isEmpty()) {
+					queue.offer(null);
+				}
+			}
+		}
 
-        if(root == null){
-            return;
-        }
-
-        printTree(root.right, level + 1);
-
-        // Print spaces according to the depth
-        for(int i = 0; i < level; i++){
-            System.out.print("    ");
-        }
-
-        // Print the current node
-        System.out.println(root.data);
-
-        // Print the left subtree
-        printTree(root.left, level + 1);
-    }
-
-    public static void main(String[] args){
-
-        LevelorderTraversal tree = new LevelorderTraversal();
-
-        PostorderTraversal.BinaryTreeNode root = new PostorderTraversal.BinaryTreeNode(10);
+		return result;
+	}
 
 
 
-        root = tree.insert(root, 1);
-        root = tree.insert(root, 3);
-        root = tree.insert(root, 5);
-        root = tree.insert(root, 7);
-        root = tree.insert(root, 9);
-        root = tree.insert(root, 11);
-        root = tree.insert(root, 13);
-        root = tree.insert(root, 15);
 
-        tree.printTree(root, 0);
+	// =========================================================
+	// 4. Print Tree Sideways
+	// =========================================================
+	public void printTree(BinaryTreeNode root, int level) {
 
-        System.out.println(tree.levelOrder(root));
-        ArrayList<ArrayList<Integer>> res = tree.levelOrder(root);
-        System.out.println("The height of the tree is " + res.size());
-    }
+		if (root == null) {
+			return;
+		}
+
+		// Print right subtree first
+		printTree(root.right, level + 1);
+
+		// Indentation according to depth
+		for (int i = 0; i < level; i++) {
+			System.out.print("    ");
+		}
+
+		// Print current node
+		System.out.println(root.data);
+
+		// Print left subtree
+		printTree(root.left, level + 1);
+	}
+
+
+	// =========================================================
+	// 5. Main Method
+	// =========================================================
+	public static void main(String[] args) {
+
+		LevelorderTraversal tree = new LevelorderTraversal();
+
+		BinaryTreeNode root = null;
+
+		// Construct BST
+		root = tree.insert(root, 10);
+		root = tree.insert(root, 1);
+		root = tree.insert(root, 3);
+		root = tree.insert(root, 5);
+		root = tree.insert(root, 7);
+		root = tree.insert(root, 9);
+		root = tree.insert(root, 11);
+		root = tree.insert(root, 13);
+		root = tree.insert(root, 15);
+
+
+		// Print tree
+		System.out.println("Binary Search Tree:");
+		tree.printTree(root, 0);
+
+
+		// Level Order Traversal
+		ArrayList<ArrayList<Integer>> result = tree.levelOrder(root);
+
+		System.out.println("\nLevel Order Traversal:");
+		System.out.println(result);
+
+
+		// Height
+		System.out.println("\nHeight of tree: " + result.size());
+	}
 }

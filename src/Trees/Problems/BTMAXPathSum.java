@@ -1,11 +1,15 @@
 package Trees.Problems;
 
-class Solution {
+import Trees.Concepts.Concepts.BinaryTreeNode;
+
+import java.util.*;
+
+class BTMAXPathSum {
 
 	private int preorderIndex = 0;
 	private Map<Integer, Integer> inorderMap = new HashMap<>();
 
-	public TreeNode buildTree(int[] preorder, int[] inorder) {
+	public BinaryTreeNode buildTree(int[] preorder, int[] inorder) {
 
 		for (int i = 0; i < inorder.length; i++) {
 			inorderMap.put(inorder[i], i);
@@ -14,13 +18,13 @@ class Solution {
 		return build(preorder, 0, inorder.length - 1);
 	}
 
-	private TreeNode build(int[] preorder, int left, int right) {
+	private BinaryTreeNode build(int[] preorder, int left, int right) {
 
 		if (left > right)
 			return null;
 
 		int rootValue = preorder[preorderIndex++];
-		TreeNode root = new TreeNode(rootValue);
+		BinaryTreeNode root = new BinaryTreeNode(rootValue);
 
 		int mid = inorderMap.get(rootValue);
 
