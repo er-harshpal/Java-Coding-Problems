@@ -1,6 +1,6 @@
 package DynamicProgramming.String;
 
-public class DistinctSubsequencw {
+public class DistinctSubsequence {
 
 		public int numDistinct(String s, String t) {
 			return solve(0, 0, s, t);
@@ -28,4 +28,3 @@ public class DistinctSubsequencw {
 			return solve(i + 1, j, s, t);
 		}
 	}
-
