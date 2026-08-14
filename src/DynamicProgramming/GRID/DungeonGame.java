@@ -1,52 +1,52 @@
-////package DynamicProgramming.GRID;
-////import java.util.*;
-////public class DungeonGame {
-////	public static void main(String[] args) {
-////		int[][] dungeon = {
-////				{-2, -3, 3},
-////				{-5, -10, 1},
-////				{10, 30, -5}
-////		};
-////		System.out.println(calculateMinimumHP(dungeon));
-////	}
-////
-////	public static int calculateMinimumHP(int[][] dungeon){
-////		int m = dungeon.length;
-////		int n = dungeon[0].length;
-////		return solve(0, 0, dungeon, m, n);
-////	}
-////	/// THIS IS THE RESURSIVE APPROACH
-////	public static int[] solve(int row, int col, int[][] dungeon, int m, int n){
-////		// out of bounds
-////		if(row>= m || col >= n){
-////			return Integer.MAX_VALUE;
-////		}
-////
-////		// Princess cell
-////		if(row >= m-1 && col == n-1) {
-////			return Math.max(1, 1- dungeon[row][col]);
-////		}
-////
-////		int down = solve(row + 1, col, dungeon, m, n);
-////		int right = solve(row, col + 1, dungeon, m, n);
-////
-////		int need = Math.min(down, right);
-////
-////		return Math.max(1, need - dungeon[row][col]);
-////	}
-////}
+//package DynamicProgramming.GRID;
+//import java.util.*;
+//public class DungeonGame {
+//	public static void main(String[] args) {
+//		int[][] dungeon = {
+//				{-2, -3, 3},
+//				{-5, -10, 1},
+//				{10, 30, -5}
+//		};
+//		System.out.println(calculateMinimumHP(dungeon));
+//	}
 //
+//	public static int calculateMinimumHP(int[][] dungeon){
+//		int m = dungeon.length;
+//		int n = dungeon[0].length;
+//		return solve(0, 0, dungeon, m, n);
+//	}
+//	/// THIS IS THE RESURSIVE APPROACH
+//	public static int[] solve(int row, int col, int[][] dungeon, int m, int n){
+//		// out of bounds
+//		if(row>= m || col >= n){
+//			return Integer.MAX_VALUE;
+//		}
 //
+//		// Princess cell
+//		if(row >= m-1 && col == n-1) {
+//			return Math.max(1, 1- dungeon[row][col]);
+//		}
 //
+//		int down = solve(row + 1, col, dungeon, m, n);
+//		int right = solve(row, col + 1, dungeon, m, n);
 //
-//
-//
-//
-//
-//
-//
-//
-//
+//		int need = Math.min(down, right);
+//,
+//		return Math.max(1, need - dungeon[row][col]);
+//	}
+//}
+
+
+
+
+
+
+
+
+
+
+
+/// First Revision
 //package DynamicProgramming.GRID;
 //import java.util.*;
 //public class DungeonGame {
@@ -79,3 +79,58 @@
 //		return dp[0][0];
 //	}
 //  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//package DynamicProgramming.GRID;
+//import java.util.*;
+//
+//public class DungeonGame {
+//	public static void main(String[] args){
+//		int[][] dungeon = {
+//				{-2, -3, 3},
+//				{-5, -10, -5},
+//				{10, 30, -5}
+//		};
+//		System.out.println(calculateMinimumHP(dungeon));
+//	}
+//
+//	public static int calculateMinimumHP(int [][] dungeon){
+//		int m = dungeon.length;
+//		int n = dungeon[0].length;
+//		return solve(0, 0, dungeon, m, n);
+//	}
+//
+//	/// This is the recursive approach
+//	public static int[] solve(int row, int col, int[][] dungeon, int m, int n){
+//
+//		// Out of bound
+//		if(row >= m || col >= n){
+//			return Integer.MAX_VALUE;
+//		}
+//
+//		// Princess Cell
+//		if(row >= m - 1 && col == n - 1){
+//			return Math.max(1, 1-dungeon[row][col]);
+//		}
+//
+//		int down = solve(row + 1, col, dungeon, m, n);
+//		int right = solve(row, col + 1, dungeon, m, n);
+//
+//		int need = Math.min(down, right);
+//
+//		return Math.max(1, need - dungeon[row][col]);
+//	}
+//
+//}
