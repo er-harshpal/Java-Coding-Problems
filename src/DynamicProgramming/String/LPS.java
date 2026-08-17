@@ -6,12 +6,12 @@ public class LPS {
 			return solve(0, s.length() - 1, s);
 		}
 
-		private int solve(int left, int right, String s) {
+	private int solve(int left, int right, String s) {
 
-			// No characters
-			if (left > right) {
-				return 0;
-			}
+		// No characters
+		if (left > right) {
+			return 0;
+		}
 
 			// One character
 			if (left == right) {
