@@ -6,33 +6,48 @@
 //	int val;
 //	TreeNode left, right;
 //}
-/// /  On a Tree
-//public class BFS {
-//
-//	static void bfs(TreeNode root){
-//
-//		if(root == null)
-//			return;
-//
-//		Queue<TreeNode> queue = new LinkedList<>();
-//
-//		queue.offer(root);
-//
-//		while(!queue.isEmpty()){
-//			TreeNode current = queue.poll();
-//
-//			System.out.println(current.val + " ");
-//
-//			if(current.left != null){
-//				queue.offer(current.left);
-//			}
-//
-//			if(current.right != null){
-//				queue.offer(current.right);
-//			}
-//		}
-//	}
-//}
+
+package GRAPHS.Concepts;
+import java.util.*;
+
+class TreeNode {
+	int root;
+	TreeNode left, right;
+}
+class BFS {
+	static void bfs(TreeNode root){
+		if(root == null){
+			return;
+		}
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+
+		while(!queue.isEmpty()){
+			TreeNode current = queue.poll();
+
+			System.out.println(current + " ");
+
+			if(current.left != null){
+				queue.offer(current.left);
+			}
+
+			if(current.right != null){
+				queue.offer(current.right);
+			}
+
+			return;
+		}
+	}
+
+	public static void main(String[] args){
+
+	}
+}
+
+
+
+
+
 
 
 
@@ -99,7 +114,7 @@
 
 
 
-//// BFS on a Graph
+/// BFS on a Graph
 //static void bfs(ArrayList<ArrayList<Integer>> graph, int start) {
 //	boolean[] visited = new boolean[graph.size()];
 //	Queue<Integer> queue = new LinkedList<>();
@@ -139,7 +154,7 @@
 
 
 
-//// Disconnected Graph
+/// Disconnected Graph
 //static void bfs(ArrayList<ArrayList<Integer>> graph){
 //	boolean[] visited = new boolean[graph.size()];
 //
@@ -246,6 +261,8 @@
 
 
 
+
+
 ////BFS on a grid
 //int[][] directions = {
 //		{-1, 0},
@@ -289,4 +306,33 @@ Multi-Source BFS	⭐⭐⭐⭐☆	Rotting Oranges, 01 Matrix
 BFS with Distance/Levels	⭐⭐⭐⭐☆	Shortest Path, Word Ladder
 Disconnected Graph BFS	⭐⭐⭐⭐☆	Connected Components
 
+
+
+ ///  On a Tree
+ //public class BFS {
+ //
+ //	static void bfs(TreeNode root){
+ //
+ //		if(root == null)
+ //			return;
+ //
+ //		Queue<TreeNode> queue = new LinkedList<>();
+ //
+ //		queue.offer(root);
+ //
+ //		while(!queue.isEmpty()){
+ //			TreeNode current = queue.poll();
+ //
+ //			System.out.println(current.val + " ");
+ //
+ //			if(current.left != null){
+ //				queue.offer(current.left);
+ //			}
+ //
+ //			if(current.right != null){
+ //				queue.offer(current.right);
+ //			}
+ //		}
+ //	}
+ //}
  */
