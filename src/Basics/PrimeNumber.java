@@ -1,7 +1,7 @@
 package Basics;
 import java.util.Scanner;
 
-public class PrimeAndReverse {
+public class PrimeNumber {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
