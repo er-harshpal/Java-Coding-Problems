@@ -1,4 +1,4 @@
-package String;
+package String.Concepts;
 
 public class LongestUncommonSubstringK {
 	public static void main(String[] args){
