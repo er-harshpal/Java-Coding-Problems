@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class BTConstructTree {
 
-	// =========================================================
+
 	// 1. Binary Tree Node
-	// =========================================================
+
 	static class TreeNode {
 
 		int data;
@@ -22,16 +22,13 @@ public class BTConstructTree {
 	}
 
 
-	// =========================================================
+
 	// 2. Global Variables
-	// =========================================================
 	private int preorderIndex;
 	private Map<Integer, Integer> inorderMap;
 
 
-	// =========================================================
 	// 3. Build Tree
-	// =========================================================
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
 
 		// Reset for every buildTree() call
@@ -47,9 +44,7 @@ public class BTConstructTree {
 	}
 
 
-	// =========================================================
 	// 4. Recursive Helper
-	// =========================================================
 	private TreeNode build(int[] preorder, int left, int right) {
 
 		// No nodes available in this range
@@ -75,9 +70,8 @@ public class BTConstructTree {
 	}
 
 
-	// =========================================================
+
 	// 5. Print Tree Sideways
-	// =========================================================
 	public void printTree(TreeNode root, int level) {
 
 		if (root == null) {
@@ -100,9 +94,7 @@ public class BTConstructTree {
 	}
 
 
-	// =========================================================
 	// 6. Inorder Traversal
-	// =========================================================
 	public void inorder(TreeNode root) {
 
 		if (root == null) {
@@ -115,9 +107,7 @@ public class BTConstructTree {
 	}
 
 
-	// =========================================================
 	// 7. Preorder Traversal
-	// =========================================================
 	public void preorder(TreeNode root) {
 
 		if (root == null) {
@@ -130,9 +120,7 @@ public class BTConstructTree {
 	}
 
 
-	// =========================================================
 	// 8. Main
-	// =========================================================
 	public static void main(String[] args) {
 
 		BTConstructTree tree = new BTConstructTree();
